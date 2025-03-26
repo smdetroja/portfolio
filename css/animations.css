@@ -1,0 +1,315 @@
+/* Smooth Scroll Behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Navbar Animations */
+.navbar-nav .nav-link {
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.navbar-nav .nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 50%;
+  background-color: #0078ff;
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.navbar-nav .nav-link:hover::after,
+.navbar-nav .nav-link.active::after {
+  width: 100%;
+}
+
+/* Service Box Hover Effects */
+.service-box {
+  transition: all 0.4s ease;
+  transform: translateY(0);
+}
+
+.service-box:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Image Hover Effects */
+.about-img img {
+  transition: all 0.5s ease;
+}
+
+.about-img img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Skill Bar Animation */
+.progress-bar {
+  transition: width 1.5s ease-in-out;
+}
+
+/* Button Hover Effects */
+.button {
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: 0.5s;
+}
+
+.button:hover::before {
+  left: 100%;
+}
+
+/* Social Icons Animation */
+.socials .ico-circle {
+  transition: all 0.3s ease;
+}
+
+.socials .ico-circle:hover {
+  transform: rotate(360deg);
+  background-color: #0078ff;
+  color: #fff;
+}
+
+/* Project Images Hover Effect */
+.service-box img {
+  transition: all 0.5s ease;
+}
+
+.service-box:hover img {
+  transform: scale(1.1);
+}
+
+/* YouTube Video Container Hover Effect */
+.service-box iframe {
+  transition: all 0.3s ease;
+}
+
+.service-box:hover iframe {
+  transform: scale(1.02);
+}
+
+/* Title Animation */
+.title-a {
+  position: relative;
+  display: inline-block;
+}
+
+.title-a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 3px;
+  bottom: -5px;
+  left: 0;
+  background-color: #0078ff;
+  transition: width 0.3s ease;
+}
+
+.title-box:hover .title-a::after {
+  width: 100%;
+}
+
+/* Fade In Animation for Sections */
+.sect-pt4 {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s ease;
+}
+
+.sect-pt4.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Back to Top Button Animation */
+.back-to-top {
+  transition: all 0.3s ease;
+}
+
+.back-to-top:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Preloader Animation */
+#preloader {
+  transition: opacity 0.5s ease;
+}
+
+/* Smooth Page Load */
+body {
+  opacity: 0;
+  animation: fadeIn 0.5s ease-in forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Vlog Section Styles */
+.vlog-card {
+  background: #fff;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s ease;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.vlog-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.vlog-thumbnail {
+  position: relative;
+  overflow: hidden;
+  padding-top: 56.25%; /* 16:9 Aspect Ratio */
+  cursor: pointer; /* This indicates the video is clickable */
+}
+
+.vlog-thumbnail iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  transition: all 0.5s ease;
+  z-index: 1; /* This ensures the iframe is above the overlay */
+}
+
+.vlog-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: all 0.3s ease;
+  pointer-events: none; /* This makes the overlay not interfere with clicks */
+}
+
+.vlog-overlay i {
+  color: #fff;
+  font-size: 3rem;
+  transform: scale(0.8);
+  transition: all 0.3s ease;
+  pointer-events: none; /* This makes the icon not interfere with clicks */
+}
+
+.vlog-card:hover .vlog-overlay {
+  opacity: 1;
+}
+
+.vlog-card:hover .vlog-overlay i {
+  transform: scale(1);
+}
+
+.vlog-content {
+  padding: 20px;
+}
+
+.vlog-content .v-title {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: #1e1e1e;
+  transition: all 0.3s ease;
+}
+
+.vlog-card:hover .v-title {
+  color: #0078ff;
+}
+
+.vlog-meta {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 10px;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.vlog-meta span {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.vlog-meta i {
+  color: #0078ff;
+}
+
+.vlog-description {
+  font-size: 0.95rem;
+  color: #666;
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* Vlog Section Animation */
+.vlog-card {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+.vlog-card:nth-child(1) { animation-delay: 0.2s; }
+.vlog-card:nth-child(2) { animation-delay: 0.4s; }
+.vlog-card:nth-child(3) { animation-delay: 0.6s; }
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Vlog Section Title Animation */
+#vlogs .title-box {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+#vlogs .line-mf {
+  width: 0;
+  animation: lineWidth 1s ease forwards 0.6s;
+}
+
+@keyframes lineWidth {
+  from {
+    width: 0;
+  }
+  to {
+    width: 40px;
+  }
+} 
